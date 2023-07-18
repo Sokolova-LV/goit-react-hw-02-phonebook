@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { nanoid } from 'nanoid';
 import { Form, Label, Input, Button } from './ContactForm.styled';
 
 export class ContactForm extends Component {
@@ -8,24 +7,21 @@ export class ContactForm extends Component {
         number: '',
     };
 
-    handleChange = e => {
-        const { name, value } = e.currentTarget;
-        this.setState({ [name]: value });
-    };
-    
-    handleSubmit = e => {
-        e.preventDefault();
+  handleChange = e => {
+    const { name, value } = e.currentTarget;
+    this.setState({ [name]: value });
+  };
 
-        this.props.onSubmit(this.state);
-        this.reset();
-    };
+  handleSubmit = e => {
+    e.preventDefault();
 
-    reset = () => {
-        this.setState({ name: '', number: '' });
-    }
+    this.props.onSubmit(this.state);
+    this.reset();
+  };
 
-    nameInputId = nanoid();
-    numberInputId = nanoid();
+  reset = () => {
+    this.setState({ name: '', number: '' });
+  };
 
   render() {
     const { name, number } = this.state;
@@ -33,12 +29,9 @@ export class ContactForm extends Component {
     return (
       <div>
         <Form onSubmit={this.handleSubmit} autoComplete="off">
-          <Label htmlFor={this.nameInputId}>
-            Name
-          </Label>
+          <Label>Name</Label>
           <Input
             value={name}
-            id={this.nameInputId}
             onChange={this.handleChange}
             type="text"
             name="name"
@@ -48,12 +41,9 @@ export class ContactForm extends Component {
             placeholder="Please, enter name"
           />
         
-          <Label htmlFor={this.numberInputId}>
-            Number
-          </Label>
+          <Label>Number</Label>
           <Input
             value={number}
-            id={this.numberInputId}
             onChange={this.handleChange}
             type="tel"
             name="number"

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Form = styled.form`
-    margin: 16px 20px;
+    margin: 16px 20px; 
 `;
 
 export const Label = styled.label`
