@@ -62,10 +62,10 @@ export class App extends Component {
         <Article>Contacts</Article>
         <Filter value={filter} handleChangeFilter={this.handleChangeFilter}></Filter>
         
-        <ContactList>
+        <ContactList
           contacts={this.getFilterContacts()}
           deleteContact={this.deleteContact}
-        </ContactList>
+        />
       </div>
     )
   }
