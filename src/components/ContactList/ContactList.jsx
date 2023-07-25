@@ -6,19 +6,19 @@ export const ContactList = ({ contacts, deleteContact }) => {
     return (
         <List>
             {contacts.map(({ name, number, id }) => (
-                <ContactElement>
+                <ContactElement
                     key={id}
                     id={id}
                     name={name}
                     number={number}
                     deleteContact={deleteContact}
-                </ContactElement>
+                />   
             ))}
         </List>
     );
 };
 
-List.PropTypes = {
+ContactList.propTypes = {
     contacts: PropTypes.arrayOf(
         PropTypes.shape({
             name: PropTypes.string.isRequired,
