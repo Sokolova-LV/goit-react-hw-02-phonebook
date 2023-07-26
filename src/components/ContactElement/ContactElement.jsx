@@ -5,7 +5,7 @@ export const ContactElement = ({ id, name, number, deleteContact }) => {
     return (
         <Item key={id}>
             <ItemName>
-                {name}:<ItemNumber>{number}</ItemNumber>
+                {name}<ItemNumber>{number}</ItemNumber>
             </ItemName>
             <Btn onClick={() => deleteContact(id)}>Delete</Btn>
         </Item>
