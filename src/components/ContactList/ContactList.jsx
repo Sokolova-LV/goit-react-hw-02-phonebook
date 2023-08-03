@@ -3,6 +3,7 @@ import { ContactElement } from 'components/ContactElement/ContactElement';
 import { List } from './ContactList.styled';
 
 export const ContactList = ({ contacts, deleteContact }) => {
+    console.log(contacts);
     return (
         <List>
             {contacts.map(({ name, number, id }) => (
@@ -12,7 +13,7 @@ export const ContactList = ({ contacts, deleteContact }) => {
                     name={name}
                     number={number}
                     deleteContact={deleteContact}
-                />   
+                />
             ))}
         </List>
     );
@@ -28,8 +29,6 @@ ContactList.propTypes = {
     ),
     deleteContact: PropTypes.func,
 };
-
-
 
 
 

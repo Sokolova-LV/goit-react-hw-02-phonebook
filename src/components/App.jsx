@@ -49,8 +49,6 @@ export class App extends Component {
   };
 
   render() {
-    console.log(this.props.contacts);
-
     return (
       <div>
         <Title>Phonebook</Title>
